@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Sidebar.css">
+    <script src="Weather.js" defer></script>
+    <title>Weather App</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        section {
+            background-color: white;
+            margin: 2% 0%;
+            padding: 2% 5%;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 2ex;
+            margin: 2% 10%;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        header>h1 {
+            font-size: 5ex;
+            color: white;
+        }
+
+        header>p {
+            font-size: large;
+            color: white;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #catPic {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            max-width: 80%; 
+            display: block;
+            margin-top: 2ex;
+        }
+
+        nav {
+            background-color: white;
+            padding: 1%;
+        }
+
+        @media screen and (min-width: 768px) {
+            #container>label {
+                width: 50%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header>h1 {
+                font-size: 8ex;
+            }
+
+            header>p {
+                font-size: larger;
+            }
+
+            label {
+                font-size: larger;
+            }
+
+            section {
+                margin: 2% 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Weather Forecast</h1>
+        <p>This website gets the weather forecast for your area.</p>
+    </header>
+    <main>
+        <div id="mySidebar" class="sidebar">
+            <p>Bridger Thompson</p>
+            <a href="Projects.html">Projects</a>
+            <a href="Homepage.html">Homepage</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Resume2.html">Resume</a>
+        </div>
+        <div id="main">
+            <!-- Sidebar button -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="openbtn" onclick="openNav()">☰ Toggle Sidebar</button>  
+            </nav>
+            <section id="weather">
+                <p>Enter in your latitude and longitude:</p>
+                <div id="container">
+                    <label>Latitude: <input type="number" id="latitude" value="40" /></label>
+                    <label>Longitude: <input type="number" id="longitude" value="-111" /></label>
+                </div>
+                <h2>Your weather information is:</h2>
+                <h3>Temperature: <span id="temp"></span></h3>
+            </section>
+            <section id="cats">
+                <h1>Tired of the weather? Enjoy a cat instead!</h1>
+                <button id="getCat">Generate a cat!</button>
+                <img src="" id="catPic">
+            </section>
+        </div>
+    </main>
+</body>
+</html>

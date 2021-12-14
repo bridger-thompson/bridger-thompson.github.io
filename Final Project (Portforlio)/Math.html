@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Sidebar.css">
+    <title>Math Game</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        .bg-light {
+            background-color: white;
+            padding: 0.5%;
+        }
+
+        section{
+            background-color: white;
+            margin: 2%, 0%;
+            padding: 3% 5%;
+            text-align: center;
+            font-size: smaller;
+        }
+
+        h1 {
+            font-size: 5ex;
+        }
+
+        header>p {
+            font-size: large;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 2ex;
+            margin: 2% 10%;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media screen and (min-width: 768px) {
+            #container h2 {
+                width: 50%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            section {
+                margin: 2% 10%;
+                font-size: large;
+            }
+
+            button, input {
+                font-size: 2ex;
+            }
+
+            header>p {
+                font-size: large;
+            }
+
+            h1 {
+                font-size: 8ex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Math Game</h1>
+        <p>This is a simple game to help you get better at math 
+            so you can ACE your next test! 
+        </p>
+    </header>
+    <main>
+        <div id="mySidebar" class="sidebar">
+            <p>Bridger Thompson</p>
+            <a href="Projects.html">Projects</a>
+            <a href="Homepage.html">Homepage</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Resume2.html">Resume</a>
+        </div>
+        <div id="main">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="openbtn" onclick="openNav()">☰ Toggle Sidebar</button>  
+            </nav>
+            <section class="game">
+                <div id="container">
+                    <h2>Questions Asked: {{total}}</h2>
+                    <h2>Correct Answers: {{numberRight}}</h2>
+                </div>
+                <h2 v-if="total != 0">Percentage: {{percentageCorrect}}%</h2>
+                <button v-on:click="submitAnswer()">Give Up</button>
+                <h3>{{currentLhs}} {{operator}} {{currentRhs}} =</h3>
+                <input :class="{correct: isCorrect}" v-model="enteredAnswer" type="number" name="answer" id="answer" v-on:keyup.enter="submitAnswer()">
+                <button v-on:click="submitAnswer()">Submit</button>
+                <p v-if="showGoodJob">Correct! Well Done!</p>
+            </section>
+        </div>
+    </main>
+    
+    <script src="Math.js"></script>
+</body>
+</html>

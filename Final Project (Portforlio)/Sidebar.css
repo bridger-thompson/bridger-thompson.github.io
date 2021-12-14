@@ -1,0 +1,91 @@
+/* Sidebar CSS */
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: lightgray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 30px 8px 8px 25px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #615e5e;
+    display: block;
+    transition: 0.3s;
+    line-height: 35px;
+    height: 100px;
+  }
+
+  .sidebar p {
+    font-size: 40px;
+    color: #615e5e;
+    padding: 0px 8px 50px 20px;
+    border-bottom: gray solid 5px; 
+  }
+  
+  .sidebar a:hover {
+    color: white;
+    background-color: gray;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 4ex;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 12px;
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    display: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  header {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .openbtn {
+      display: block;
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .openbtn {
+      font-size: 20px;
+    }
+  }

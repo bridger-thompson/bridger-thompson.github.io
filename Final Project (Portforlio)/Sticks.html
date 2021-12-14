@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Sticks.css">
+    <link rel="stylesheet" href="Sidebar.css">
+    <script src="Sticks.js" defer></script>
+    <title>Sticks Game</title>
+</head>
+<body>
+    <header>
+        <h1>Sticks Game</h1>
+        <p>The point of this game is to not pick up the last stick. Do that and you lose! 
+            Each player can remove up to 3 sticks on each of their turns. 
+            Click on a stick to remove it. 
+            Use a combination of math, psychology, and mad skill to win!
+        </p>
+    </header>
+    <main>
+        <div id="mySidebar" class="sidebar">
+            <p>Bridger Thompson</p>
+            <a href="Projects.html">Projects</a>
+            <a href="Homepage.html">Homepage</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Resume2.html">Resume</a>
+        </div>
+        <div id="main">
+            <!-- Sidebar button -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="openbtn" onclick="openNav()">☰ Toggle Sidebar</button>  
+            </nav>
+            <section id="Sticks">
+                <p id="turn">Player <span class="player-id"></span>, it's your turn.</p>
+                <button id="gameButton">Done with turn</button>
+                <ul role="button">
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

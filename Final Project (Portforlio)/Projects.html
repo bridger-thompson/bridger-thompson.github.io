@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Projects.css">
+    <link rel="stylesheet" href="Sidebar.css">
+    <title>Bridger Thompson's Projects</title>
+</head>
+<body>
+    <header>
+        <h1>Select Project</h1>
+        <p>Which project would you like to view?</p>
+    </header>
+    <main>
+        <div id="mySidebar" class="sidebar">
+            <p>Bridger Thompson</p>
+            <a href="Homepage.html">Homepage</a>
+            <a href="AboutMe.html">About Me</a>
+            <a href="Resume2.html">Resume</a>
+        </div>
+        <div id="main">
+            <!-- Sidebar button -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="openbtn" onclick="openNav()">☰ Toggle Sidebar</button>  
+            </nav>
+            <div id="container" role="grid">
+                <section class="project" role="gridcell">
+                    <a href="Sticks.html">
+                        <img src="Sticks Game.jpg" alt="Sticks Game">
+                        <p>Sticks Game</p>
+                    </a>
+                </section>
+                <section class="project" role="gridcell">
+                    <a href="Math.html">
+                        <img src="Math.jpg" alt="Math Game">
+                        <p>Math Game</p>
+                    </a>
+                </section>
+                <section class="project" role="gridcell">
+                    <a href="Weather.html">
+                        <img src="weather-images.jpg" alt="Weather App">
+                        <p>Weather App</p>
+                    </a>
+                </section>
+                <section class="project" role="gridcell">
+                    <a href="Resume2.html">
+                        <img src="Resume.jpg" alt="Resume">
+                        <p>Resume</p>
+                    </a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        //Sidebar
+        var open = false;
+        function openNav() {
+        if (!open){
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.querySelector("header").style.marginLeft = "250px";
+            open = true;
+        }
+        else {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.querySelector("header").style.marginLeft = "0";
+            open = false;
+        }
+        }
+    </script>
+</body>
+</html>
